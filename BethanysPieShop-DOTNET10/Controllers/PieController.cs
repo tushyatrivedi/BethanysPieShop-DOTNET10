@@ -7,6 +7,7 @@ namespace BethanysPieShop_DOTNET10.Controllers
     {
         public IActionResult List()
         {
+            ViewBag.CurrentCategory = "All Pies";
             return View(StaticPieData.GetAll());
         }
     }
