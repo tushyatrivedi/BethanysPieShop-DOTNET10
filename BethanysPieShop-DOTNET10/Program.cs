@@ -1,7 +1,14 @@
+using BethanysPieShop_DOTNET10.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("PieDb"));
+
 var app = builder.Build();
+
+DataSeeder.Seed(app.Services);
 
 if (app.Environment.IsDevelopment())
 {
