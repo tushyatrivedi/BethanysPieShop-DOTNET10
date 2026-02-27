@@ -11,7 +11,11 @@
     @foreach (var pie in Model)
     {
         <div>
-            <h2>@pie.Name</h2>
+            <h2>
+                <a href="/Pie/Details/@pie.PieId">
+                    @pie.Name
+                </a>
+            </h2>
             <h3>@pie.ShortDescription</h3>
             <h4>Price: @pie.Price.ToString("C")</h4>
         </div>
